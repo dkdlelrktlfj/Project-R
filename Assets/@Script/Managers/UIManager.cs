@@ -67,7 +67,10 @@ public class UIManager : LazySingleton<UIManager>
         T prefab = ResourceManager.Instance.LoadResourceFromResources<T>($"{PathDefine.UIResourcePath}{_path}");
         if (prefab == null)
         {
-            throw new System.Exception($"{_path} Panel Not found");
+            System.NullReferenceException exception = new System.NullReferenceException($"{_path} 패널을 찾지 못함");
+            ExceptionManager.SetCriticalException(exception);
+            throw exception;
+
         }
 
         T result = GameObject.Instantiate<T>(prefab);

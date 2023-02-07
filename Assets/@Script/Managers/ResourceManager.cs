@@ -107,7 +107,7 @@ public sealed partial class ResourceManager : LazySingleton<ResourceManager>
     private Dictionary<string, ResourceHandler> loadedResource = new Dictionary<string, ResourceHandler>();
     private Dictionary<string, ResourceHandler> releaseDelayResources = new Dictionary<string, ResourceHandler>();
 
-    /// Resources Æú´õ·ÎºÎÅÍ ·Îµå
+    /// Resources í´ë”ë¡œë¶€í„° ë¡œë“œ
     public T LoadResourceFromResources<T>(string _path) where T : UnityEngine.Object
     {
         if (loadedResource.ContainsKey(_path) == true)
@@ -123,7 +123,7 @@ public sealed partial class ResourceManager : LazySingleton<ResourceManager>
         return resource;
     }
 
-    /// ¾îµå·¹¼­ºí·ÎºÎÅÍ ºñµ¿±â ·Îµå ÈÄ °á°ú ¸®ÅÏ
+    /// ì–´ë“œë ˆì„œë¸”ë¡œë¶€í„° ë¹„ë™ê¸° ë¡œë“œ í›„ ê²°ê³¼ ë¦¬í„´
     public async UniTask<T> LoadAsyncResourceFromAddressables<T>(string _path) where T : UnityEngine.Object
     {
         do
@@ -148,7 +148,7 @@ public sealed partial class ResourceManager : LazySingleton<ResourceManager>
         return await res.GetAwaitResource<T>();
     }
 
-    /// ¾îµå·¹¼­ºí·ÎºÎÅÍ ·Îµå ÈÄ Äİ¹é
+    /// ì–´ë“œë ˆì„œë¸”ë¡œë¶€í„° ë¡œë“œ í›„ ì½œë°±
     public async UniTaskVoid LoadAsyncResourceFromAddressables<T>(string _path, System.Action<T> _onLoad) where T : UnityEngine.Object
     {
         do
@@ -173,7 +173,7 @@ public sealed partial class ResourceManager : LazySingleton<ResourceManager>
         _onLoad?.Invoke(await res.GetAwaitResource<T>());
     }
 
-    // ¿¡¼Â ÇØÁ¦
+    // ì—ì…‹ í•´ì œ
     public void Release(string _path)
     {
         if (loadedResource.TryGetValue(_path, out ResourceHandler _reference))
@@ -187,7 +187,7 @@ public sealed partial class ResourceManager : LazySingleton<ResourceManager>
         }
     }
 
-    // 60ÃÊÀÇ ½Ã°£ ´ë±â ÈÄ ÂüÁ¶°¡ ¾ø´Â ¾Ö¼Â ÇØÁ¦
+    // 60ì´ˆì˜ ì‹œê°„ ëŒ€ê¸° í›„ ì°¸ì¡°ê°€ ì—†ëŠ” ì• ì…‹ í•´ì œ
     private async UniTaskVoid Release(int _milliseconds, string _name, ResourceHandler _handler)
     {
         await UniTask.Delay(_milliseconds);

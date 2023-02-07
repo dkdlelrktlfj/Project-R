@@ -33,7 +33,7 @@ public class BaseAudioController : MonoBehaviour, IAudioPlayer
     }
 
 
-    //Stop ÀÌÈÄ ¼öµ¿À¸·Î controller¸¦ Release ÇØÁÖ¾î¾ßÇÔ
+    //Stop ì´í›„ ìˆ˜ë™ìœ¼ë¡œ controllerë¥¼ Release í•´ì£¼ì–´ì•¼í•¨
     public virtual void Stop()
     {
         audioBase.Stop();

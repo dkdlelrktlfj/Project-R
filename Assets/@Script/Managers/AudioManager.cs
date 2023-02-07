@@ -154,7 +154,7 @@ public sealed class AudioManager : LazySingleton<AudioManager>
         player.ClearAudioPlayer();
     }
 
-    //Auto Release°¡ ¾Æ´Ñ »ç¿ëÀÚ°¡ ÀÓÀÇ·Î Stop ÈÄ ReleaseÇÒ ¶§ »ç¿ë
+    //Auto Releaseê°€ ì•„ë‹Œ ì‚¬ìš©ìê°€ ì„ì˜ë¡œ Stop í›„ Releaseí•  ë•Œ ì‚¬ìš©
     public void ReleaseAudioController(IAudioPlayer _player)
     {
         player.Release((BaseAudioController)_player);
@@ -189,7 +189,7 @@ public sealed class AudioManager : LazySingleton<AudioManager>
         return clips;
     }
 
-    //AudioClipÀ» ReleaseÇÒ ¶§ È£Ãâ
+    //AudioClipì„ Releaseí•  ë•Œ í˜¸ì¶œ
     public void Release(string _audioName)
     {
         ReleaseAudioAsset(_audioName);

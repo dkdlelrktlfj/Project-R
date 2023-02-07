@@ -133,7 +133,7 @@ public class AudioPlayer
             float currentTime = 0f;
             while (currentTime < _durationTime)
             {
-                //ÃÖÁ¾ º¼·ý = BaseVolume * ½ÃÀÛº¼·ý + (¸ñÇ¥ º¼·ý±îÁöÀÇ Â÷ * (½Ã°£ ÁøÇàµµ));
+                //ìµœì¢… ë³¼ë¥¨ = BaseVolume * ì‹œìž‘ë³¼ë¥¨ + (ëª©í‘œ ë³¼ë¥¨ê¹Œì§€ì˜ ì°¨ * (ì‹œê°„ ì§„í–‰ë„));
                 float volume = baseVolume * (currentVolume + (volumeOffset * (currentTime / _durationTime)));
                 bgmPlayer.SetVolume(volume);
 
@@ -155,7 +155,7 @@ public class AudioPlayer
             float currentTime = 0f;
             while (currentTime < _durationTime)
             {
-                //ÃÖÁ¾ º¼·ý = BaseVolume * ½ÃÀÛº¼·ý + (¸ñÇ¥ º¼·ý±îÁöÀÇ Â÷ * (½Ã°£ ÁøÇàµµ));
+                //ìµœì¢… ë³¼ë¥¨ = BaseVolume * ì‹œìž‘ë³¼ë¥¨ + (ëª©í‘œ ë³¼ë¥¨ê¹Œì§€ì˜ ì°¨ * (ì‹œê°„ ì§„í–‰ë„));
                 float volume = baseVolume * (currentVolume + (volumeOffset * (currentTime / _durationTime)));
                 bgmPlayer.SetVolume(volume);
 
