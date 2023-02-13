@@ -70,3 +70,9 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+/[Aa]ssets/@AssetLibrary/*
+/[Aa]ssets/@Addressables/*
+/TestBuild_BackUpThisFolder_ButDontShipItWithYourGame/*
+/TestBuild_BurstDebugInformation_DoNotShip/*
+ProjectRunnerKeystore.keystore
